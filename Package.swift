@@ -3,10 +3,6 @@
 
 import PackageDescription
 
-
-let target1 = Target.binaryTarget(name: "ConvivaSDK", path: "./Framework/ConvivaSDK.xcframework")
-target1.exclude = ["DemoApp"]
-
 let package = Package(
     name: "ConvivaSDK",
     products: [
@@ -19,5 +15,9 @@ let package = Package(
         // Dependencies declare other packages that this package depends on.
         // .package(url: /* package url */, from: "1.0.0"),
     ],
-    targets: [target1]
+    targets: [
+        .binaryTarget(
+            name: "ConvivaSDK",
+            path: "./Framework/ConvivaSDK.xcframework")
+    ]
 )
